@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>requireJS</title>
+    <style>
+        .demo {
+            float: left;
+            margin-left: 40px;
+            width:320px;
+            height: 400px;
+        }
+        #ul .demo {
+            display: none;   
+        }
+        #ul {
+            width: 450px;
+        }
+        .edit-box {
+            box-sizing: border-box;
+            width: 100%;
+            /* padding: 20px; */
+            border: 1px dashed #42d79f;
+            overflow: hidden;
+            min-height: 100px;
+        }
+        .el {
+            width: 360px;
+            min-height: 30px;
+            border: 1px solid #a0a0a0;
+            margin: 10px;
+        }
+        #ul .el {
+            cursor: move;
+        }
+        .edit-box .el {
+            float: left;
+        }
+        .views {
+            overflow: hidden;
+        }
+        .views .el {
+            float: left;
+        }
+        .setBtn {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #42d79f;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="save">保存</button>
+    <button class="copy">复制</button>
+    <button class="clear">清空</button>
+    
+    <div id="ul">
+        <div class="views">
+            <div class="el">
+                <span class="tit">饼图</span>
+                <div class="demo" data-graph-type="chart01"></div>
+            </div>
+            <span class="setBtn">+</span>
+        </div>
+        <div class="views">
+            <div class="el">
+                <span class="tit">折线图</span>
+                <div class="demo" data-graph-type="chart02"></div>
+            </div>
+        </div>
+        <div class="views">
+            <div class="el">
+                <span class="tit">柱形图</span>
+                <div class="demo" data-graph-type="chart03"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="set-data">
+        <form action="" class="form">
+            <label for="name">名称</label><input type="text" name="name" id="name">
+            <label for="item">项目</label>
+            <input type="text" name="item" id="item1">
+            <input type="text" name="item" id="item2">
+            <input type="text" name="item" id="item3">
+            <input type="text" name="item" id="item4">
+            <input type="text" name="item" id="item5">
+        </form>
+        <span class="submit">提交</span>
+    </div>
+
+    <div class="edit-box" id="sortable"></div>
+
+    <div id="save-box" style="display: none"></div>
+
+    <script src="js/require.js" data-main="js/main"></script>
+</body>
+</html>
